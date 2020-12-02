@@ -68,7 +68,7 @@ RegisterCommand("panicButton", function()
 end)	
 
 function pressPanicButton()
-	if GetEntityHealth(GetPlayerPed(officerPlayer)) < 100 then
+	if GetEntityHealth(GetPlayerPed(PlayerId())) < 100 then
 		currentPressed = false
 		notify(_U('panicButton_dead'))
 	else
@@ -76,8 +76,8 @@ function pressPanicButton()
 			currentPressed = false
 		end)
 	end
-					
-	local blipVector = vector3(GetEntityCoords(GetPlayerPed(officerPlayer), alive))
+	
+	local blipVector = vector3(GetEntityCoords(GetPlayerPed(PlayerId()), true))
 	local officerName = GetPlayerName(PlayerId())
 	officerServerId = GetPlayerServerId(PlayerId())
 	officerPlayer = GetPlayerFromServerId(officerServerId)
@@ -88,11 +88,10 @@ end
 RegisterNetEvent('panicButton:setBlips')
 AddEventHandler('panicButton:setBlips', function(officerName, officerServerId, officerPlayer, blipVector)
 	if ESX.GetPlayerData().job.name == 'police' and GetPlayerName(PlayerId()) ~= officerName then
-	
 		local streetName = GetStreetNameAtCoord(blipVector.x, blipVector.y, blipVector.z)
 		local zone = GetLabelText(GetNameOfZone(blipVector.x, blipVector.y, blipVector.z))
-		blipX = AddBlipForCoord(blipVector.x, blipVector.y)
-		blipP = AddBlipForCoord(blipVector.x, blipVector.y)
+		blipX = AddBlipForCoord(blipVector.x, blipVector.y, blipVector.z)
+		blipP = AddBlipForCoord(blipVector.x, blipVector.y, blipVector.z)
 	
 		--[[1.Blip PB]]
 		SetBlipSprite(blipP, Config.blipP.Sprite)
@@ -134,8 +133,9 @@ AddEventHandler('panicButton:setBlips', function(officerName, officerServerId, o
 			RemoveBlip(blipX)
 		end)
 	else
-		notify(_U('panicButton_pressed'))
-		return
+		if GetPlayerName(PlayerId()) == officerName then 
+			notify(_U('panicButton_pressed'))
+		end
 	end
 end)
 
