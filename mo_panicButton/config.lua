@@ -1,5 +1,5 @@
 Config = {}
-Config.Locale = 'de'
+Config.Locale = 'en'
 
 Config.pressDelay = 1 --(min) default: 1
 Config.trigger_key = 313
