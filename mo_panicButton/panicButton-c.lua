@@ -1,3 +1,4 @@
+--© Mo1810--
 local currentPressed = false
 ESX = nil
 local xPlayer = nil
@@ -5,7 +6,7 @@ local xPlayer = nil
 Citizen.CreateThread(function()
 	while ESX == nil do
 		TriggerEvent('esx:getSharedObject', function(obj) ESX = obj end)
-		Citizen.Wait(0)
+		Citizen.Wait(1)
 	end
 	
 	while ESX.GetPlayerData().job == nil do
@@ -18,7 +19,7 @@ Citizen.CreateThread(function()
 	while true do
 		if IsControlPressed(0, Config.trigger_key) then
 			if not currentPressed then
-				if ESX.PlayerData.job.name == 'police' then
+				if ESX.GetPlayerData().job.name == 'police' then
 					currentPressed = true
 					if IsControlPressed(0, Config.trigger_key) then
 						for i=2, 1, -1 do
@@ -50,7 +51,7 @@ Citizen.CreateThread(function()
 				notify(_U('panicButton_alreadyPressed'))
 			end
 		end
-		Citizen.Wait(1)
+		Citizen.Wait(50)
 	end
 end)
 
@@ -66,6 +67,9 @@ RegisterCommand("panicButton", function()
 		notify(_U('panicButton_alreadyPressed'))
 	end
 end)	
+
+TriggerEvent('chat:addSuggestion', '/panicButton', 'PanicButton drücken und andere Polizisten alarmieren', {
+})
 
 function pressPanicButton()
 	if GetEntityHealth(GetPlayerPed(PlayerId())) < 100 then
@@ -144,3 +148,4 @@ function notify(msg)
 	AddTextComponentString(msg)
 	DrawNotification(false, false)
 end
+--© Mo1810--
