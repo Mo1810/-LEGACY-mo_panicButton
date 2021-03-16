@@ -1,3 +1,7 @@
+--[[--------------------------]]--
+--[[  Created by Mo1810#4230  ]]--
+--[[--------------------------]]--
+
 ESX = nil
 
 TriggerEvent('esx:getSharedObject', function(obj) ESX = obj end)
@@ -14,3 +18,7 @@ RegisterServerEvent('panicButton:setBlips')
 AddEventHandler('panicButton:setBlips', function(officerName, officerServerId, officerPlayer, blipVector)
 	TriggerClientEvent('panicButton:setBlips', -1, officerName, officerServerId, officerPlayer, blipVector)
 end)
+
+--[[--------------------------]]--
+--[[  Created by Mo1810#4230  ]]--
+--[[--------------------------]]--
