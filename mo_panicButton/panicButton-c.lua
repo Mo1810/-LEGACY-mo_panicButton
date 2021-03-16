@@ -1,7 +1,9 @@
---© Mo1810--
+--[[--------------------------]]--
+--[[  Created by Mo1810#4230  ]]--
+--[[--------------------------]]--
+
 local currentPressed = false
 ESX = nil
-local xPlayer = nil
 
 Citizen.CreateThread(function()
 	while ESX == nil do
@@ -148,4 +150,7 @@ function notify(msg)
 	AddTextComponentString(msg)
 	DrawNotification(false, false)
 end
---© Mo1810--
+
+--[[--------------------------]]--
+--[[  Created by Mo1810#4230  ]]--
+--[[--------------------------]]--
