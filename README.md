@@ -2,6 +2,6 @@
 
 PanicButton Script for FiveM [lua]
 
-For support please contact: Mo1810#4230 (Discord)
+For support please write an issue and I will proceed it as soon as possible.
 
 [GER/EN translation]
