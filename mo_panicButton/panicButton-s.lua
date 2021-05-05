@@ -6,6 +6,13 @@ ESX = nil
 
 TriggerEvent('esx:getSharedObject', function(obj) ESX = obj end)
 
+AddEventHandler('onResourceStart', function(resourceName)
+	if (GetCurrentResourceName() ~= resourceName) then
+		return
+	end
+	print('Script by Mo1810#4230 - https://discord.gg/Q25mtKms8c')
+end)
+
 ESX.RegisterServerCallback('panicButton:getxPlayer', function(cb)
     local xPlayer = ESX.GetPlayerFromId(source)
 	while xPlayer == nil do
