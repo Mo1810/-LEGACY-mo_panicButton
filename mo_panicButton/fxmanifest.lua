@@ -9,14 +9,16 @@ server_scripts {
 	"@es_extended/locale.lua",
 	"panicButton-s.lua",
 	"config.lua",
-	"locales/de.lua"
+	"locales/de.lua",
+	"locales/en.lua"
 }
 
 client_scripts {
 	"@es_extended/locale.lua",
 	"panicButton-c.lua",
 	"config.lua",
-	"locales/de.lua"
+	"locales/de.lua",
+	"locales/en.lua"
 }
 
 dependencies {
