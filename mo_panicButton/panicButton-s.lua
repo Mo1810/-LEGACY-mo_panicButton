@@ -2,10 +2,6 @@
 --[[  Created by Mo1810#4230  ]]--
 --[[--------------------------]]--
 
-ESX = nil
-
-TriggerEvent('esx:getSharedObject', function(obj) ESX = obj end)
-
 AddEventHandler('onResourceStart', function(resourceName)
 	if (GetCurrentResourceName() ~= resourceName) then
 		return
