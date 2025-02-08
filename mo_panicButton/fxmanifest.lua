@@ -5,7 +5,6 @@ author 'Mo1810'
 version '1.1.1'
 
 server_scripts {
-	"@mysql-async/lib/MySQL.lua",
 	"@es_extended/locale.lua",
 	"panicButton-s.lua",
 	"config.lua",
